@@ -8,11 +8,11 @@ app.config['UPLOAD_PATH'] = os.path.dirname(os.path.abspath(__file__)) + '/uploa
 
 @app.route('/')
 def index():
-    return render_template('index.html', titulo="Analisador de Mudas por meio de CNN" ,imagem = "capa_padrao.jpg")
+    return render_template('index.html', titulo="Analisador de Mudas por meio de CNN", imagem="capa_padrao.jpg")
 
 
-@app.route('/analize', methods=['POST','GET'])
-def upload():
+@app.route('/analize', methods=['POST', 'GET'])
+def analize():
     if request.method == 'POST':
         print(request.files['arquivo'])
         arquivo = request.files['arquivo']
