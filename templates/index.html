@@ -1,19 +1,23 @@
 {% extends "template.html" %}
 {% block conteudo %}
-    <form action="http://127.0.0.1:5000/analize" method="post" enctype="multipart/form-data">
-        <div class="row justify-content-md-center">
-            <div class="col-md-12">
-                <figure class="thumb">
-                    <img class="img-responsive" src="{{ url_for('static', filename='images/'+imagem) }}" width="100%" >
-                    <figcaption>
-                        <label class="fileContainer">
-                            Selecione uma muda
-                            <input type="file" name="arquivo" accept=".jpg">
-                        </label>
-                    </figcaption>
-                </figure>
-            </div>
+    <div class="row justify-content-md-center">
+        <div class="col-md-6">
+            <form action="http://127.0.0.1:5000/analize" method="post" enctype="multipart/form-data">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-12">
+                        <div class="form-group files">
+                            <input type="file" id="input-file-max-fs" name="arquivo"  class="form-control" multiple="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center">
+                    <br />
+                    <button type="submit" class="btn btn-success">Analisar</button>
+                </div>
+            </form>
+            {% if retorno != '' %}
+                <h4>Resultado: {{retorno}}</h4>
+            {% endif %}
         </div>
-        <button type="submit" class="btn btn-primary btn-salvar">Analisar</button>
-    </form>
+    </div>
 {% endblock %}

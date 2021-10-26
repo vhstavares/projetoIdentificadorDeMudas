@@ -9,3 +9,4 @@ Usar Pycharm
 Instalar o python 3.6 e adicionar no pyhcarm como interpretador
 <br />
 Link Tensorflow suporte GPU: https://www.tensorflow.org/install/gpu?hl=pt-br
+
